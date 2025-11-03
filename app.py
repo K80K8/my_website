@@ -72,7 +72,6 @@ def fetch_all_as_dicts(cursor, use_postgres=False):
 def index():
     return render_template('index.html')
 
-
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
@@ -125,6 +124,9 @@ def submissions():
     html += "</ul>"
     return html
 
+@app.route('/memes')
+def memes():
+    return render_template('memes.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
