@@ -45,5 +45,19 @@ def submit():
 
     return jsonify({'message': response_message})
 
+@app.route("/submissions")
+def submissions():
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM contacts")  # your table name
+    rows = c.fetchall()
+    conn.close()
+
+    # Build a simple HTML page to show the results
+    html = "<h1>Submissions</h1><ul>"
+    for row in rows:
+        html += f"<li>{row['name']} - {row['email']} - {row['message']}</li>"
+    html += "</ul>"
+    return html
 if __name__ == '__main__':
     app.run(debug=True)
