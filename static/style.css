@@ -103,15 +103,13 @@ header {
   flex-direction: column; /* Stacks children vertically */
   justify-content: flex-end; /* Aligns content to the bottom */
   align-items: center;        /* vertically aligns text and image */
-  /* gap: 40px;                  */
   padding: 20px;
-  margin: 0 auto;           /* centers it within the page */
+  margin: 0 auto;           
   color:#59339a;
 }
 
 .sparkly {
   position: relative;
-
   background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
@@ -158,12 +156,12 @@ header {
   width: 100%;
   height: 100px;
   object-fit: fill; /* Scales the image down to fit, maintaining aspect ratio */
-  /* Other values: 'cover' (fills container, cropping if necessary), 'fill' (stretches to fill, ignoring aspect ratio) */
+
 }
-.one   { background-color: #ff7675; }
+.one   { background-color: #ff59cd; }
 .two   { background-color: #74b9ff; }
 .three { background-color: #55efc4; }
-.four  { background-color: #fdcb6e; }
+.four  { background-color: #f8fd6e; }
 
 
 
@@ -280,39 +278,6 @@ footer {
 .modal-content button:hover {
   background-color: #59339a;
 }
-
-
-
-
-.glitter-container {
-  position: relative;
-  /* width: 400px;
-  height: 250px; */
-  background: linear-gradient(135deg, #f6d365 0%, #fd85ef 100%);
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.glitter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background-image: radial-gradient(white, rgba(255,255,255,0) 60%);
-  background-size: 10px 10px; /* smaller sparkles (was 40px 40px) */
-  animation: glitterMove 2s linear infinite, glitterTwinkle 1.5s ease-in-out infinite;
-  opacity: 0.6;
-}
-
-@keyframes glitterMove {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-30px, -30px); }
-}
-
-@keyframes glitterTwinkle {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.9; }}
 
 .social-links {
   display: flex;

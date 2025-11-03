@@ -1,6 +1,7 @@
 import sqlite3
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+import shutil
 import os 
 
 
@@ -8,20 +9,13 @@ app = Flask(__name__)
 
 CORS(app)
 
-#------------------------------------------------
-# import mysql.connector
+src = os.path.join(os.path.dirname(__file__), 'contacts.db')
+dst = os.path.join('/tmp', 'contacts.db')
 
-# conn = mysql.connector.connect(
-#     host="your-db-server.com",  # or IP address
-#     user="dbuser",
-#     password="securepassword",
-#     database="contacts"
-# )
+if not os.path.exists(dst):
+    shutil.copy(src, dst)
 
-# cursor = conn.cursor()
-#------------------------------------------------
-
-DATABASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'contacts.db')
+DATABASE = dst
 
 def init_sqlite_db():
     conn = sqlite3.connect(DATABASE)
