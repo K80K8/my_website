@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Reset margins */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color:#6f42c1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* stack header, main, footer vertically */
+}
+
+/* Header bar */
+header {
+  display: flex;
+  justify-content: space-between; /* links left, text right */
+  align-items: center;
+  background-color: #6f42c1;
+  padding: 10px 30px;
+  color: white;
+}
+
+/* Nav links (left side) */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  /* font-size: 12px; */
+  font-size: 18px;
+  margin-right: 20px;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Header text (right side) */
+.header-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Layout for the text + image section */
+.content {
+  display: flex;
+  justify-content: center;    /* centers content horizontally in the page */
+  align-items: center;        /* vertically aligns text and image */
+  gap: 40px;                  /* space between text and image */
+  padding: 40px;
+  margin: 0 auto;
+  background-color: #7aceff;             /* centers it within the page */
+}
+
+/* Text styling */
+.text-section {
+  flex: 1;                    /* let text take up half the space */
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.text-section h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Contact button below the text */
+.contact-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #6f42c1;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #59339a;
+}
+
+/* Image styling */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-section img {
+  max-width: 360px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  height: 50px;
+  justify-content: center;    /* centers content horizontally in the page */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: flex-end; /* Aligns content to the bottom */
+  align-items: center;        /* vertically aligns text and image */
+  /* gap: 40px;                  */
+  padding: 20px;
+  margin: 0 auto;           /* centers it within the page */
+  color:#59339a;
+}
+
+.sparkly {
+  position: relative;
+
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  overflow: hidden;
+}
+
+.sparkly::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.5;
+  animation: sparkle 2s infinite linear;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.flex-container > div {
+  width: 100px;
+  height: 100px;
+  border: 3px solid rgb(225, 0, 255);
+  border-radius: 5px;
+}
+
+.flex-container img {
+  width: 100%;
+  height: 100px;
+  object-fit: fill; /* Scales the image down to fit, maintaining aspect ratio */
+  /* Other values: 'cover' (fills container, cropping if necessary), 'fill' (stretches to fill, ignoring aspect ratio) */
+}
+.one   { background-color: #ff7675; }
+.two   { background-color: #74b9ff; }
+.three { background-color: #55efc4; }
+.four  { background-color: #fdcb6e; }
+
+
+
+/* Layout for the text + image section */
+.quote {
+  display: flex;
+  justify-content: center;    /* centers content horizontally in the page */
+  align-items: center;        /* vertically aligns text and image */
+  gap: 40px;                  /* space between text and image */
+  padding: 40px;
+  margin: 0 auto;
+  background-color: #6f42c1;
+  opacity: 0.5;            /* centers it within the page */
+}
+
+/* Layout for the text + image section */
+.quote > div {
+  display: flex;
+  justify-content: right;    /* centers content horizontally in the page */
+  align-items: center;        /* vertically aligns text and image */
+  gap: 40px;                  /* space between text and image */
+  padding: 40px;
+  margin: 0 auto;
+}
+
+/* Footer styling (optional) */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #6f42c1;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Header text (right side) */
+.footer-text {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* On top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 0, 255, 0.6); /* semi-transparent background */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color:#7aceff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Close button */
+.close {
+  color: #333;
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #6f42c1;
+}
+
+/* Form styles */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #59339a;
+}
+
+
+
+
+.glitter-container {
+  position: relative;
+  /* width: 400px;
+  height: 250px; */
+  background: linear-gradient(135deg, #f6d365 0%, #fd85ef 100%);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.glitter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white, rgba(255,255,255,0) 60%);
+  background-size: 10px 10px; /* smaller sparkles (was 40px 40px) */
+  animation: glitterMove 2s linear infinite, glitterTwinkle 1.5s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes glitterMove {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-30px, -30px); }
+}
+
+@keyframes glitterTwinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-links a {
+  display: inline-flex;
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.social-links a svg {
+  width: 24px;
+  height: 24px;
+  fill: white; /* default icon color */
+}
+
+.social-links a:hover svg {
+  fill: #f6d365; /* shimmer/gold color on hover */
+  transform: scale(1.2);
+}

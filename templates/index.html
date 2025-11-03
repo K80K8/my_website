@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dank Memes</title>
+  <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+    <div class="header-text">Dank Memes</div>
+    <!-- <nav class="nav-links">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </nav> -->
+      <nav class="social-links">
+    <!-- Facebook -->
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24H12.82v-9.294H9.692V11.03h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.676h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0z"/>
+      </svg>
+    </a>
+
+    <!-- Twitter -->
+    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337 3.1a9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.38 4.482A13.944 13.944 0 0 1 1.671 3.149a4.916 4.916 0 0 0 1.523 6.573A4.897 4.897 0 0 1 .964 9.1v.062a4.916 4.916 0 0 0 3.946 4.817 4.904 4.904 0 0 1-2.212.084 4.918 4.918 0 0 0 4.588 3.417A9.867 9.867 0 0 1 0 19.54a13.945 13.945 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 4.557z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 1.5h-9A4 4 0 0 0 3.5 7.5v9A4 4 0 0 0 7.5 20.5h9a4 4 0 0 0 4-4v-9a4 4 0 0 0-4-4ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7Zm5.25-.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5Z"/>
+      </svg>
+    </a>
+  </nav>
+    </header>
+
+  <main>
+    <div class="content">
+        <div class="text-section">
+        <h1>Welcome to My Page</h1>
+        <p><i>Has Anyone Really Been Far Even as Decided to Use Even Go Want to do Look More Like?</i> - Socrates</p>
+        <a href="#contact" class="contact-btn">Contact Me</a>
+        </div>
+
+        <div class="image-section">
+        <img src="{{ url_for('static', filename='images/image.png') }}" alt="example">
+        </div>
+    </div>
+
+    <div class="sparkly">
+    <!-- <div class="glitter">    </div> -->
+        <div class="info">Psst hey kid, wanna snort some memes?</div>
+
+        <div class="flex-container">
+            <div class="one"><img src="{{ url_for('static', filename='images/image2.png') }}" alt="example"></div>
+            <div class="two"><img src="{{ url_for('static', filename='images/image3.png') }}" alt="example"></div>
+            <div class="three"><img src="{{ url_for('static', filename='images/image4.png') }}" alt="example"></div>
+            <div class="four"><img src="{{ url_for('static', filename='images/image5.png') }}" alt="example"></div>
+        </div>
+
+    </div>
+    <!-- </div>
+    <div class="quote">Some quote
+        <div>- Author</div>
+    </div> -->
+
+  </main>
+
+  <footer>
+    <div class="header-text"><nav class="nav-links"><a href="">Home</a></nav></div>
+   
+  </footer>
+
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+    <!-- <script>
+    // Get elements
+    const modal = document.getElementById("contactModal");
+    const btn = document.querySelector(".contact-btn");
+    const closeBtn = document.querySelector(".close");
+
+    // Open modal when button clicked
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Close modal when X clicked
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the modal content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+
+    // Optional: handle form submission
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Form submitted!"); // replace with actual submission logic
+        modal.style.display = "none";
+        form.reset();
+    });
+    </script> -->
+
+    <script>
+      // Get elements
+      const modal = document.getElementById("contactModal");
+      const btn = document.querySelector(".contact-btn");
+      const closeBtn = document.querySelector(".close");
+
+      // Open modal when button clicked
+      btn.onclick = function() {
+          modal.style.display = "block";
+      };
+
+      // Close modal when X clicked
+      closeBtn.onclick = function() {
+          modal.style.display = "none";
+      };
+
+      // Close modal when clicking outside the modal content
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      };
+
+      // Handle form submission
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", async function(e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          try {
+              // Send data to the Flask backend
+              const response = await fetch("http://127.0.0.1:5000/submit", {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({ name, email, message })
+              });
+
+              const result = await response.json();
+
+              alert(result.message); // show success message
+              modal.style.display = "none";
+              form.reset();
+          } catch (error) {
+              console.error("Error submitting form:", error);
+              alert("There was an error submitting the form. Please try again.");
+          }
+      });
+</script>
+  </body>
+</html>
