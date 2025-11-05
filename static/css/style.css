@@ -39,7 +39,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 100px;
-  padding: 40px;
+  padding: 80px;
   margin: 0 auto;
   background-color: #7aceff;
 }
@@ -306,7 +306,7 @@ footer {
   background-size: 100px 100px;
   background-position: top left;
   background-color: #74b9ff;
-  min-height: 460px;
+  min-height: 600px;
   padding: 20px;
   border: 1px solid #ccc;
 }
