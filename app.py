@@ -50,7 +50,7 @@ else:
 
     def get_sqlite_connection():
         conn = sqlite3.connect(DATABASE)
-        conn.row_factory = sqlite3.Row  # allows access by column name
+        conn.row_factory = sqlite3.Row 
         return conn
 
     # Initialize SQLite table
@@ -58,10 +58,10 @@ else:
     conn.execute('CREATE TABLE IF NOT EXISTS contacts (name TEXT, email TEXT, message TEXT)')
     conn.close()
 
-# Helper function to fetch rows as dicts
+# Fetch rows as dicts
 def fetch_all_as_dicts(cursor, use_postgres=False):
     if use_postgres:
-        return cursor.fetchall()  # RealDictCursor already returns dicts
+        return cursor.fetchall()
     else:
         columns = [col[0] for col in cursor.description]
         return [dict(zip(columns, row)) for row in cursor.fetchall()]
@@ -127,6 +127,10 @@ def submissions():
 @app.route('/memes')
 def memes():
     return render_template('memes.html')
+
+@app.route('/game')
+def game():
+    return render_template('game.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

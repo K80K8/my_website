@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sick Beats</title>
+  <title>Game</title>
   <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-    <header>
-    <div class="header-text">Sick Beats</div>
+        <header>
+    <div class="header-text">Game</div>
       <nav class="social-links">
     <!-- Facebook -->
     <a href="https://facebook.com" target="_blank" aria-label="Facebook">
@@ -32,21 +33,23 @@
     </a>
   </nav>
     </header>
+    <main>
 
-  <main>
-      <div class="tiled-background-section"></div>
-  </main>
-  <footer>
-    <div class="header-text"><nav class="nav-links"><a href="{{ url_for('index') }}">Home</a></nav></div>  
-  </footer>
-  </body>
-<audio id="bg-music" loop>
-  <source src="{{ url_for('static', filename='audio/jc.mp3') }}" type="audio/mpeg">
+  <div class="content">
+ <canvas id="pongCanvas" width="800" height="500"></canvas>
+  <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+  </div>
+</main>
+</body>
+<footer>
+<div class="header-text"><nav class="nav-links"><a href="{{ url_for('index') }}">Home</a></nav></div>  
+</footer>
+<audio id="bg-music2" loop>
+  <source src="{{ url_for('static', filename='audio/sanic.mp3') }}" type="audio/mpeg">
 </audio>
-
 <script>
-document.addEventListener("click", function() {
-  const music = document.getElementById("bg-music");
+document.addEventListener("keypress", function() {
+  const music = document.getElementById("bg-music2");
   music.play();
 }, { once: true });
 </script>
