@@ -1,0 +1,1 @@
+A personal project that is a full-stack application using html, css, flask, java and SQLite. The website has been deployed via GitHub on render at https://my-website-wgtk.onrender.com/. The deployed version on render uses a PostGres DB insteaed of SQLite. It has also been deployed via a docker image on render.
